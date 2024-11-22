@@ -1,0 +1,279 @@
+/*.navbar-custom {
+    background-color: #1d1c1c; 
+}*/
+.navbar-custom .nav-link {
+  color: white; 
+}
+.navbar-custom .nav-link:hover {
+  color: #adb5bd; 
+}
+
+.logo img{
+width: 250px;
+}
+
+
+.promo {
+  background-image:  url('../../src/img/fosyyyy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40vh; /* 50% от высоты окна браузера */
+}
+
+
+
+.cath {
+height: 250px;
+width: 400px;
+margin: 3px 10px;
+border-radius: 5px;
+background-color: #1d1c1c;
+}
+.un {
+  background-image:  url('../../src/img/princ.jpg');
+  
+
+}
+
+.deux {
+  background-image:  url('../../src/img/sushi.jpg');
+  
+
+}
+
+.quatre {
+  background-image:  url('../../src/img/menu-pizza.jpg');
+  
+
+}
+
+.six {
+  background-image:  url('../../src/img/dessert.jpg');
+  
+
+}
+
+.trois {
+  background-image:  url('../../src/img/grill.jpg');
+  
+
+}
+
+.cinq {
+  background-image:  url('../../src/img/veget.jpeg');
+  
+
+}
+
+.btn-outline-success {
+  border-color: white;
+  color: white; 
+}
+
+.btn-outline-success:hover {
+  border-color: white;
+  background-color: antiquewhite;
+  color: rgb(34, 31, 31); 
+}
+ 
+.cath {
+  position: relative; /* Ограничиваем область действия псевдоэлемента внутри плитки */
+  height: 250px;
+  width: 400px;
+  margin: 3px 10px;
+  border-radius: 5px;
+  color: white; /* Белый текст для контраста */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Обрезаем любые выходящие за пределы элементы */
+}
+
+.cath::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный слой */
+  z-index: 1; /* Помещаем затемнение над изображением */
+  border-radius: 5px; /* Закругляем углы так же, как у родителя */
+}
+
+.cath p {
+  position: relative;
+  z-index: 2; /* Помещаем текст поверх затемнения */
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.un, .deux, .trois, .quatre, .cinq, .six {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Убедитесь, что карусель корректно адаптирована */
+.carousel-inner {
+  width: 100%;
+  max-width: 1200px; /* Ограничиваем ширину карусели */
+  margin: 0 auto; /* Центрируем карусель */
+}
+
+.carousel-image {
+  max-height: 400px; /* Ограничиваем высоту изображений */
+  object-fit: cover; /* Сохраняем пропорции изображений, чтобы они не искажались */
+  border-radius: 10px; /* Закругленные углы */
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 10px 10px; /* Закругляем только нижние углы */
+  text-align: center;
+  font-size: 1.2rem; /* Немного увеличиваем текст */
+}
+/* Стиль заголовка раздела */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1d1c1c; /* Цвет текста в стиле сайта */
+  border-bottom: 2px solid #1d1c1c; /* Тонкая полоса под заголовком */
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Отступы для раздела с заголовком */
+.random-dish-section {
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #202c38;
+}
+
+body {
+  cursor: url('../../src/img/caf.png'), auto; /* 'fork.png' - путь к изображению вилки */
+}
+
+a:hover {
+  cursor: url('../../src/img/caf.png'), auto; /* 'fork.png' - путь к изображению вилки */
+}  
+button:hover {
+  cursor: url('../../src/img/vertical_fork.png'), auto; /* 'fork.png' - путь к изображению вилки */
+}  
+
+
+
+
+.foot {
+  background-color: #5b6b7a;
+  opacity: 0.8;
+
+}
+
+.foot img  {
+  width:40px;
+  margin: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*карусель команды*/
+#team-carousel {
+  perspective: 1200px;
+  padding: 40px 0;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1d1c1c;
+  margin-bottom: 30px;
+}
+
+.carousel-coverflow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-coverflow-item {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform-origin: center;
+}
+
+.carousel-coverflow-item:nth-child(1) {
+  transform: rotateY(0deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(2) {
+  transform: rotateY(60deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(3) {
+  transform: rotateY(120deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(4) {
+  transform: rotateY(180deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(5) {
+  transform: rotateY(240deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(6) {
+  transform: rotateY(300deg) translateZ(300px);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #1d1c1c;
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #adb5bd;
+}
+
+.team-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#team-carousel {
+  perspective: 1200px;
+  padding: 40px 0 80px 0; /* Увеличиваем нижний отступ */
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+

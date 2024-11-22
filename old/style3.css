@@ -1,0 +1,650 @@
+body{
+  margin: 0;
+  min-height: 100vh;
+  
+  
+}
+
+#promo {
+  position: relative;
+  background-image: url('../../src/img/bgnew.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Высота 100% от высоты окна браузера */
+  color: rgb(255, 255, 255);
+  overflow: hidden; 
+  width: 100%;
+}
+
+#promocat {
+  position: relative;
+  background-image: url('../../src/img/lamb-chops-8824495_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  overflow: hidden; /* Для обрезки псевдоэлемента, если он выйдет за границы */
+}
+
+#promocat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный слой для затемнения */
+  z-index: 2; /* Помещаем затемнение над фоновым изображением */
+}
+
+#promocat > * {
+  position: relative; /* Содержимое будет выше затемнения */
+  z-index: 3;
+}
+
+
+#promo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+  pointer-events: none; 
+}
+
+#promo > * {
+  position: relative; 
+  z-index: 2; 
+}
+#content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.cont {
+padding: 10px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+z-index: 2;
+position: relative;
+text-align: center;
+width: 100%; 
+justify-content: space-between;
+font-size: 14px; 
+}
+
+
+#logo img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+
+
+h2 {
+  margin: 0;
+  font-size: 100px;
+}
+.promo-text{
+  align-items: center;
+  margin-top:70px ;
+  margin-bottom: 70px;
+}
+
+.promo-text p {
+  font-size: 50px; 
+  margin-bottom: 20px; /* Добавляем отступ под текстом */
+
+}
+
+
+
+.iconplat img {
+  width: 200px;
+  animation: spin 10s linear infinite; /* Анимация вращения */
+}
+
+/* Анимация вращения */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.navbar a{
+  color: lightgrey;
+ }
+
+ .navbar .btn-outline-success{
+
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #50bda5;;
+  outline: none;
+
+
+  
+ }
+
+ .navbar .btn-outline-success:hover{
+  background-color: #50bda5;;
+ }
+
+
+
+ .cath {
+  margin: 3px 10px;
+  border-radius: 5px;
+  background-color: #1d1c1c;
+  }
+  .un {
+    background-image:  url('../../src/img/princ.jpg');
+    
+  
+  }
+  
+  .deux {
+    background-image:  url('../../src/img/sushi.jpg');
+    
+  
+  }
+  
+  .quatre {
+    background-image:  url('../../src/img/menu-pizza.jpg');
+    
+  
+  }
+  
+  .six {
+    background-image:  url('../../src/img/dessert.jpg');
+    
+  
+  }
+  
+  .trois {
+    background-image:  url('../../src/img/grill.jpg');
+    
+  
+  }
+  
+  .cinq {
+    background-image:  url('../../src/img/veget.jpeg');
+    
+  
+  }
+
+   
+  .cath {
+    position: relative; /* Ограничиваем область действия псевдоэлемента внутри плитки */
+    height: 250px;
+    width: 400px;
+    margin: 3px 10px;
+    border-radius: 5px;
+    color: white; /* Белый текст для контраста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Обрезаем любые выходящие за пределы элементы */
+  }
+  
+  .cath::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный слой */
+    z-index: 1; /* Помещаем затемнение над изображением */
+    border-radius: 5px; /* Закругляем углы так же, как у родителя */
+  }
+  
+  .cath p {
+    position: relative;
+    z-index: 2; /* Помещаем текст поверх затемнения */
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .un, .deux, .trois, .quatre, .cinq, .six {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+.title {
+margin: 30px;
+}
+
+  .container {
+      margin-top: 30px;
+      margin-bottom: 30px;
+  }
+  .category-title {
+      font-size: 2rem;
+      color: #333;
+      text-transform: uppercase;
+      margin: 0;
+  }
+  
+  .decorative-element {
+      display: inline-block;
+      width: 50px;
+      height: 2px;
+      background-color: rgb(207, 109, 64); /* Цвет, соответствующий цвету кнопки */
+  }
+  
+      
+ 
+
+  .foot {
+      background-color:#262525;
+      
+    
+    }
+    
+    .foot img  {
+      width:30px;
+      margin: 10px;
+    }
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*карусель команды*/
+
+#team-carousel {
+  perspective: 1200px;
+  padding: 40px 0;
+  background-color: #f8f9fa;
+  position: relative;
+  margin: 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1d1c1c;
+  margin-bottom: 30px;
+}
+
+.carousel-coverflow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-coverflow-item {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform-origin: center;
+}
+
+.carousel-coverflow-item:nth-child(1) {
+  transform: rotateY(0deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(2) {
+  transform: rotateY(60deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(3) {
+  transform: rotateY(120deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(4) {
+  transform: rotateY(180deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(5) {
+  transform: rotateY(240deg) translateZ(300px);
+}
+
+.carousel-coverflow-item:nth-child(6) {
+  transform: rotateY(300deg) translateZ(300px);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #1d1c1c;
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #adb5bd;
+}
+
+.team-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#team-carousel {
+  perspective: 1200px;
+  padding: 40px 0 80px 0; 
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+
+
+.carousel-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+.carousel-image {
+  max-height: 400px; 
+  object-fit: cover; 
+  border-radius: 10px; 
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  font-size: 1.2rem; 
+} 
+
+/* Стиль заголовка раздела */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1d1c1c; /* Цвет текста в стиле сайта */
+  border-bottom: 2px solid #1d1c1c; /* Тонкая полоса под заголовком */
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Отступы для раздела с заголовком */
+.random-dish-section {
+  margin-bottom: 20px;
+}
+
+
+
+/*карточки блюд*/
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.btn-outline-success {
+  
+  border-color: #8db8b2;
+  color: #8db8b2;
+}
+
+.btn-outline-success:hover {
+  background-color: #8db8b2;
+  color: white;
+}
+
+.btn:hover{
+border-color: #8db8b2;
+}
+
+.cath a{
+ color: white; 
+ text-decoration: none;
+}
+
+@media (max-width: 768px) {
+.category-title {
+    font-size: 1.5rem;
+}
+
+.decorative-element {
+    width: 30px;
+}
+body{
+  min-width: 100vw;
+}
+}
+
+
+@media (max-width: 576px) {
+.promo-text h2{
+    font-size: 3rem;
+    text-align: center;
+}
+.promo-text p {
+  font-size: 2rem;
+  text-align: center;
+}
+#promo {
+  background-position: top; /* Позиционируй фон по верхней части экрана */
+  padding: 20px; /* Добавь отступы, чтобы текст не прилегал слишком плотно к краям */
+  height: auto; /* Автоматическая высота для лучшего отображения на мобильных устройствах */
+}
+}
+
+header {
+position: relative;
+background-color: black;
+height: 100vh;
+min-height: 25rem;
+width: 100%;
+overflow: hidden;
+}
+
+header video {
+position: absolute;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: 0;
+-ms-transform: translateX(-50%) translateY(-50%);
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+position: relative;
+z-index: 2;
+}
+
+header .overlay {
+position: absolute;
+top: 0;
+left: 0;
+height: 100vh;
+width: 100%;
+background-color: black;
+opacity: 0.5;
+z-index: 1;
+}
+
+/* Media Query for devices withi coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+@media (pointer: coarse) and (hover: none) {
+header {
+  background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+}
+
+header video {
+  display: none;
+}
+}
+
+
+#section1 { 
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), /* Полупрозрачный белый налет */
+  url('../../src/img/para.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center; 
+height: 100vh; /* 100% of viewport height */
+margin: 0 auto; 
+position: relative; 
+
+
+}
+
+#section2 { 
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), /* Полупрозрачный белый налет */
+  url('../../src/img/para.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center; 
+height: 100vh; /* 100% of viewport height */
+margin: 0 auto; 
+position: relative; 
+
+
+}
+
+
+
+
+.containerform {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+#monFormulaire form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#monFormulaire fieldset {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+#monFormulaire legend {
+  font-size: 1.2em;
+  padding: 0 10px;
+}
+
+#monFormulaire .form-group {
+  margin-bottom: 15px;
+}
+
+#monFormulaire .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#monFormulaire .form-group input,
+#monFormulaire .form-group select,
+#monFormulaire .form-group textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#monFormulaire .form-group input[type="radio"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+#monFormulaire .form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+#monFormulaire .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#monFormulaire button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#monFormulaire button.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#monFormulaire button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+#monFormulaire button.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+#monFormulaire button.btn-secondary:hover {
+  background-color: #5a6268;
+}

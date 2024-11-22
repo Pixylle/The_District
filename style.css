@@ -1,0 +1,20 @@
+.navbar-custom {
+    background-color: #ff0000; 
+}
+.navbar-custom .nav-link {
+    color: white; 
+}
+.navbar-custom .nav-link:hover {
+    color: #adb5bd; 
+}
+
+.logo img {
+    width: 100px;
+ }
+
+ .logo img {
+    width: 50px !important;
+    max-width: none;
+    height: auto;
+    display: block;
+}

@@ -1,0 +1,398 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+     display: flex;
+  flex-direction: column;
+}
+
+#droit {
+    background-color: gray;
+    flex: 4;
+}
+
+#gauche {    
+    flex: 8;
+}
+
+.section1 {
+    display: flex;
+}
+
+.main-menu {
+    display: flex;
+    color: white;
+}
+
+nav {
+    background-color: black;
+    padding: 5px;  
+    margin-bottom: 5px;
+    color: white;
+}
+
+nav ul, footer li {
+    list-style: none;
+}
+
+nav li, footer li {
+    margin-right: 5px;
+}
+
+nav a {
+    color: white; 
+}
+
+footer {
+    background-color: black; 
+    color: white;
+    margin-top: 5px;
+    text-align: center;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+}
+
+#logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 30%;
+}
+
+header h1{
+    margin-right: 0px;
+}
+@media screen and (max-width: 600px) {
+    body {
+      
+        min-height: 100%;
+        margin: 0;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 0;
+    }
+    footer 
+    {
+        position: absolute; bottom: 0;  
+        margin-right: 0px;
+      }
+
+    nav ul {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    nav a {
+        font-size: 20px;
+
+    }
+    nav li, footer li {
+        margin-right: 30px;
+    }
+    footer li {
+        margin-right: 28px;
+        
+    }
+    header h1 {
+        font-size: 15px;
+        display: flex;
+        
+      
+    }
+    #logos {
+        flex-direction: row; 
+        justify-content: center;
+        white-space: nowrap; 
+    }
+
+    
+    #logos h1 {
+        margin-top: 2px;
+    }
+    
+    p {
+       font-size: 14px;
+    }
+
+    #gauche h1, #gauche h2 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #gauche p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+ .section1 {
+      display: flex;
+      flex-direction: column;
+
+ }
+    
+          
+}
+
+    
+
+.containerform {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+legend {
+    font-size: 1.2em;
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+button.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+button.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+body {
+    display: block;
+}
+
+
+
+.main-menu {
+    display: flex;
+    color: white;
+}
+
+nav {
+    background-color: black;
+    padding: 5px;  
+    margin-bottom: 5px;
+    color: white;
+   
+}
+
+nav ul, footer li {
+    list-style: none;
+    display: inline;
+}
+
+nav li, footer li {
+    margin-right: 5px;
+    display: inline;
+}
+
+nav a {
+    color: white; 
+}
+
+footer {
+    background-color: black; 
+    color: white;
+    display: flex;
+    margin-top: 5px;
+}
+
+footer a {
+    color: white;
+}
+
+#logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 30%;
+}
+
+header h1{
+    margin-right: 0px;
+}
+
+#tm {
+ display: flex; 
+ flex-direction: column; 
+ margin: 20px;
+ justify-content: center;
+}
+
+
+/*
+@media (min-width: 600px) and (max-width: 768px) {
+   
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   
+}
+
+@media (min-width: 1024px) {
+    /* Дополнительные стили для данного диапазона 
+}
+
+
+.form-container{
+    background: #ecf0f3;
+    font-family: 'Nunito', sans-serif;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+.form-container .form-icon{
+    color: #ac40ab;
+    font-size: 55px;
+    text-align: center;
+    line-height: 100px;
+    width: 100px;
+    height:100px;
+    margin: 0 auto 15px;
+    border-radius: 50px;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px #fff;
+}
+
+.form-container .title{
+    color: #ac40ab;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.form-container .form-horizontal .form-group{ margin: 0 0 25px 0; }
+
+.form-container .form-horizontal .form-group label{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-container .form-horizontal .form-control{
+    color: #333;
+    background: #ecf0f3;
+    font-size: 15px;
+    height: 50px;
+    padding: 20px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .form-horizontal .form-control:focus{
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+    outline: none;
+}
+
+.form-container .form-horizontal .form-control::placeholder{
+    color: #808080;
+    font-size: 14px;
+}
+
+.form-container .form-horizontal .btn{
+    color: #000;
+    background-color: #ac40ab;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 12px 15px 11px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px #fff;
+    border: none;
+    transition: all 0.5s ease 0s;
+}
+
+.form-container .form-horizontal .btn:hover,
+.form-container .form-horizontal .btn:focus{
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: none;
+    outline: none;
+}
+
+
+*/

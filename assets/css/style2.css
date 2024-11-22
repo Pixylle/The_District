@@ -1,0 +1,29 @@
+#carouselExample {
+    background-color: black;
+    position: relative; /* Для корректного позиционирования стрелок */
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px; /* Увеличение ширины для удобства клика */
+    height: 50px; /* Увеличение высоты для удобства клика */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 1000; /* Убедитесь, что стрелки поверх других элементов */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: white; /* Белые стрелки на черном фоне */
+    border-radius: 50%; /* Круглая форма стрелок */
+    width: 30px; /* Размер стрелок */
+    height: 30px; /* Размер стрелок */
+  }
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Затемнение при наведении */
+  }
+  
