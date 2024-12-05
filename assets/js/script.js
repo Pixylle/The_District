@@ -57,37 +57,37 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function checkForm(f) {
-    const emailRegex = /^[a-z0-9.-]+@[a-z0-9.-]{2,}\.[a-z]{2,4}$/;
-    const postalCodeRegex = /^\d{5}$/;
-    const textRegex =/^[a-z-]{1,}$/i;
+    document.addEventListener('DOMContentLoaded', function () {
+        // Получаем элемент формы по его идентификатору
+        const formulaire = document.getElementById('contactForm');
+    
+        // Добавляем обработчик события 'submit' для формы
+        formulaire.addEventListener('submit', function (e) {
+            // Предотвращаем отправку формы до завершения валидации
+            e.preventDefault();
+    
+            // Инициализируем переменную, которая будет отслеживать валидность формы
+            let estValide = true;
+            
+            // Вызываем функцию валидации для каждого поля и обновляем переменную estValide
+            estValide &= validerChamp(/^[a-zA-ZÀ-ÿ-]+$/, document.getElementById('nom'), 'Nom invalide.');
+           estValide &= validerChamp(/^[a-zA-ZÀ-ÿ-]+$/, document.getElementById('prenom'), 'Prénom invalide.');
+           estValide &= validerChamp(/^\S+@\S+\.\S+$/, document.getElementById('email'), 'Email invalide.');
+           estValide &= validerChamp(
+            /^[\p{L}\d\s\.'-]+(,\s*\d{1,4}(?:\s*[A-Za-z]?)?(?:\s*bât(?:iment)?\s*\d{1,4})?(?:\s*appt\s*\d{1,4})?)?$/u, 
+            document.getElementById('adresse'), 
+            'Adresse invalide.'
+        );
+            estValide &= validerChamp(/^(\+7|8)?\s?\(?\d{3}\)?\s?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/, document.getElementById('telephone'), 'telephone invalide.');
+       
+    
+            // Если все поля валидны, отправляем форму
+           if (estValide) {
+                console.log("Formulaire valide, prêt à être soumis.");
+                formulaire.submit();
+            }
+        });
+    });
+};
 
-
-    const email = f.elements['email'].value;
-    const postalCode = f.elements['CP'].value;
-    const ville = f.elements['Ville'].value;
-    const personne = f.elements['votrenom'].value;
-
-   
-    if (!emailRegex.test(email)) {
-        alert("Email non valide");
-        return false;
-    }
-    if (!postalCodeRegex.test(postalCode)) {
-        alert("Le code postal doit comporter 5 chiffres.");
-        return false;
-    }
-
-    if (!textRegex.test(ville)) {
-        alert("Saisir la valeur correcte");
-        return false;
-    }
-
-    if (!textRegex.test(personne)) {
-        alert("Saisir la valeur correcte");
-        return false;
-    }
-
-
-    return true;
-}
 

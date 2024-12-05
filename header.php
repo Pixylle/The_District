@@ -22,24 +22,12 @@
                             <a class="nav-link active" aria-current="page" href="/index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">TOUS LES PLATS</a>
+                            <a class="nav-link" href="plats.php">TOUS LES PLATS</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            CATHÉGORIES
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Plats principaux</a></li>
-                                        <li><a class="dropdown-item" href="#">Cuisine asiatique</a></li>
-                                        <li><a class="dropdown-item" href="#">Grillades</a></li> 
-                                        <li><a class="dropdown-item" href="#">Pizzas</a></li>
-                                        <li><a class="dropdown-item" href="#">Végétarien</a></li>
-                                        <li><a class="dropdown-item" href="#">Desserts</a></li>
-                                        <li><a class="dropdown-item" href="#">Boissons</a></li>
-                                        <li><a class="dropdown-item" href="#">Entrées</a></li>
-                                        <li><a class="dropdown-item" href="#">Salades</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="categories.php">CATéGORIES</a>
+                                </li>
+                                
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Recherche">

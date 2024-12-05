@@ -1,20 +1,20 @@
 
 <div class="floating-cart">
-  <a href="panier.php" class="cart-link">
+  <a href="contact.php" class="cart-link">
     <i class="fas fa-shopping-cart"></i>
-    <span class="cart-count">
-      <?php echo isset($_SESSION['cart']) ? getCartTotalQuantity($_SESSION['cart']) : 0; ?>
-    </span>
+    
   </a>
 </div>
 
 <section class="foot">
         <div class="d-flex justify-content-center">
+          <div><p>Politique de confidentialité</p></div>
           <div><img src="src/img/fb.png"></div>
           <div><img src="src/img/instagram.png"></div>
           <div><img src="src/img/telegram.png"></div>
           <div><img src="src/img/whatsapp.png"></div>
           <div><img src="src/img/pinterest.png"></div>
+          <div><p>Mentions légales</p></div>
         </div>
         </section>
     <script src="/assets/js/script.js"></script>

@@ -1,8 +1,8 @@
 body{
+  height: 100%;
   margin: 0;
-  min-height: 100vh;
-  
-  
+  padding: 0;
+  min-height: 100vh; 
 }
 
 #promo {
@@ -210,8 +210,45 @@ margin: 30px;
   .container {
       margin-top: 30px;
       margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-gap: 40px;
+      justify-content: center;
+      align-items: center;      
   }
   
+  .containercont {
+  display: flex; /* Или use flexbox */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid-form {
+  grid-column: span 3; /* Заставить форму занимать все 3 колонки */
+}
+
+.order-summary {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.order-summary img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+
+
+form {
+  width: 100%; /* Полная ширина формы */
+  max-width: 700px; /* Максимальная ширина */
+}
   .category-title {
       font-size: 2rem;
       color: #333;
@@ -472,10 +509,6 @@ height: 100vh;
 min-height: 25rem;
 width: 100%;
 overflow: hidden;
-
-
-
-
 }
 
 header video {
@@ -519,7 +552,8 @@ background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center; 
-height: 100vh; /* 100% of viewport height */
+height: auto; /* 100% of viewport height */
+width: 100%;
 margin: 0 auto; 
 position: relative; 
 
@@ -727,4 +761,337 @@ position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+p .footer {
+  color:beige;
+}
 
+a {
+  color:#000000;
+}
+
+#add a {
+  color: white;
+  text-decoration: none; /* Убирает подчеркивание */
+}
+a #add:hover{
+  color:white;
+}
+
+
+a:hover {
+  color:#000000;
+}
+
+.custom-card-btn {
+  color: white;
+}
+/*новые карточки товара */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto; /* Заставляем контент занимать все оставшееся пространство */
+  padding: 20px;
+}
+
+footer {
+  background-color: #262525;
+  color: beige;
+  text-align: center;
+  padding: 10px 0;
+  flex-shrink: 0;
+}
+
+.containerform {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto; /* Заставляем контент занимать все оставшееся пространство */
+  padding: 20px;
+}
+
+footer {
+  background-color: #262525;
+  color: beige;
+  text-align: center;
+  padding: 10px 0;
+  flex-shrink: 0;
+}
+
+.containerform {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+
+
+
+/*ВСЕ БЛЮДА */
+
+.menu-section {
+  margin: 30px auto;
+  min-height: calc(100vh - 100px); /* Учитываем высоту футера */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(350px, 1fr)); /* Карточки шире */
+  gap: 20px;
+  justify-content: center; /* Центрируем карточки */
+  max-width: 1200px; /* Ограничиваем максимальную ширину */
+  margin: 0 auto; /* Центрирование контейнера */
+}
+
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Размещение элементов по всей высоте карточки */
+  align-items: stretch; /* Полная ширина карточки */
+  border: 1px solid #ddd;
+  padding: 0; /* Убираем внутренние отступы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  height: 100%; /* карточка занимает всю доступную высоту */
+  min-height: 400px; /* Минимальная высота карточки */
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-card-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover; /* Полностью заполняет верхнюю часть */
+}
+
+.custom-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px; /* Добавляем отступ */
+  word-wrap: break-word; /* Перенос слов */
+  text-align: center; /* Выравниваем текст по центру */
+}
+
+.custom-card-description {
+  font-size: 14px;
+  color: #555;
+  margin: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Ограничение в 3 строки */
+  -webkit-box-orient: vertical;
+}
+
+.custom-card-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px;
+}
+
+.custom-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Это прижмет элементы к низу карточки */
+  padding: 10px;
+}
+
+.custom-card-quantity {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.custom-card-btn {
+  background-color: #50bda5;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-card-btn:hover {
+  background-color: #3b8f76;
+}
+
+.custom-card-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+#page-wrapper {
+  display: flex;
+  flex-direction: column; /* Хедер, контент, футер */
+  height: 100vh; /* Занимает всю высоту экрана */
+}
+
+#add-dish-section {
+  flex: 1; /* Растягиваем контент по высоте */
+  display: flex;
+  justify-content: center; /* Центрируем форму по горизонтали */
+  align-items: center; /* Центрируем форму по вертикали */
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px; /* Ограничиваем ширину формы */
+  padding: 20px;
+  background-color: #f8f9fa; /* Светлый фон для формы */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень для формы */
+  border-radius: 10px; /* Закруглённые углы */
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .menu-container {
+    grid-template-columns: repeat(2, minmax(350px, 1fr)); /* На планшетах две карточки */
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-container {
+    grid-template-columns: 1fr; /* На мобильных одна карточка */
+  }
+}
+
+
+
+/*управление блюдом */
+/* Контейнер карточки для одного блюда */
+.single-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%; /* Карточка занимает 25% экрана */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  box-sizing: border-box;
+  height: auto; /* Высота карточки будет зависеть от контента */
+  margin: 20px auto;
+  text-align: center;
+}
+
+.single-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.single-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.single-card-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 50px; /* Ограничиваем высоту описания */
+}
+
+.single-card-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.single-card-category {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Блок с кнопками */
+.single-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.single-card-btn {
+  background-color: #50bda5;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  width: 100%; /* Все кнопки занимают всю ширину */
+  transition: background-color 0.3s;
+}
+
+.single-card-btn:hover {
+  background-color: #3b8f76;
+}
+
+/* Убираем скругления */
+.single-card-btn {
+  border-radius: 0; /* Без скруглений */
+}
+
+.single-card-btn-edit, 
+.single-card-btn-delete, 
+.single-card-btn-disable {
+  background-color: #50bda5;
+}
+
+.single-card-btn-edit:hover, 
+.single-card-btn-delete:hover, 
+.single-card-btn-disable:hover {
+  background-color: #3b8f76;
+}
+/*кнопка редактирования */
+.corrige {
+  /*position: absolute;*/
+  color: gray;
+}
+
+ .single-card-btn a{
+  color: white;
+ }
+
+@media (max-width: 768px) {
+  .single-card-container {
+    width: 90%; /* На мобильных устройствах карточка будет шире */
+  }
+}

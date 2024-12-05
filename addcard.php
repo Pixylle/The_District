@@ -3,56 +3,46 @@ session_start();
 include 'connexion.php';
 include 'DAO.php';
 
-// Проверяем входные данные
-if (!isset($_POST['plat_id'], $_POST['action'])) {
-    die('Ошибка: ID товара или действие не переданы!');
+// Проверяем наличие всех необходимых данных
+if (!isset($_POST['id'], $_POST['libelle'], $_POST['prix'], $_POST['quantite'])) {
+    die('Ошибка: Не все необходимые данные переданы!');
 }
 
-$plat_id = $_POST['plat_id'];
-$action = $_POST['action'];
-$cat_id = $_POST['id_categorie'] ?? null;
+// Получаем данные из формы
+$plat_id = intval($_POST['id']); // Приведение к числу для безопасности
+$libelle = htmlspecialchars($_POST['libelle']); // Защита от XSS
+$prix = $_POST['prix']; 
+$quantite = $_POST['quantite']; 
+$image = $_POST['image']; 
 
-// Инициализируем корзину
+// Инициализируем корзину, если она пуста
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-switch ($action) {
-    case 'add_to_cart':
-        $productKey = array_search($plat_id, array_column($_SESSION['cart'], 'id'));
+// Если корзина пустая, добавляем товар
+if (empty($_SESSION['cart'])) {
+    $_SESSION['cart'][] = [
+        'id' => $plat_id,
+        'name' => $libelle,
+        'price' => $prix,
+        'quantite' => $quantite,
+        'image' => $image,
+    ];
+} else {
+    // Проверяем, есть ли уже товар в корзине
+    $existing_item = $_SESSION['cart'][0]; // Корзина содержит только один товар
 
-        if ($productKey !== false) {
-            // Увеличиваем количество, если товар уже есть
-            $_SESSION['cart'][$productKey]['quantity'] += 1;
-        } else {
-            // Добавляем новый товар в корзину
-            $_SESSION['cart'][] = [
-                'id' => $plat_id,
-                'name' => $_POST['plat_name'],
-                'price' => $_POST['plat_prix'],
-                'quantity' => 1,
-            ];
-        }
-        break;
-
-    case 'buy_now':
-        // Добавляем товар в корзину и перенаправляем на оплату
-        $_SESSION['cart'][] = [
-            'id' => $plat_id,
-            'name' => $_POST['plat_name'],
-            'price' => $_POST['plat_prix'],
-            'quantity' => 1,
-        ];
-        header('Location: checkout.php');
-        exit();
-
-    default:
-        die('Ошибка: Неизвестное действие!');
+    if ($existing_item['id'] === $plat_id) {
+        // Если это тот же товар, увеличиваем его количество
+        $_SESSION['cart'][0]['quantite'] += $quantite;
+    } else {
+        // Если это другой товар, выводим ошибку
+        die('Erreur : Vous ne pouvez commander qu\'un seul plat à la fois!');
+    }
 }
 
-header('Location: categorie.php?id=' . $cat_id);
+// Перенаправляем пользователя на страницу после успешного добавления
+header('Location: contact.php');
 exit();
-
-
-
 ?>

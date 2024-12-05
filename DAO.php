@@ -42,8 +42,6 @@ function get_plats($cat_id) {
     return $plats; 
 }
 
-
-
 function plus_populaire() {
     global $db;
     $requete = $db->prepare("SELECT p.libelle, p.description, p.image, p.id, sum(c.quantite) from plat p
@@ -89,15 +87,81 @@ function get_allcategories() {
         LEFT JOIN commande com ON com.id_plat = p.id
         GROUP BY cat.libelle
         ORDER BY total_quantite DESC
-        LIMIT 6;
+       
     ');
     
    
     $allcat->execute();
     
-    $categories = $allcat->fetchAll(PDO::FETCH_OBJ); 
-    return $categories;
+    $allcategories = $allcat->fetchAll(PDO::FETCH_OBJ); 
+    return $allcategories;
     
 }
 
+
+function get_listcategories() {
+    global $db;
+
+    try {
+        // Исправленный SQL-запрос
+        $listlcat = $db->prepare('SELECT id, libelle, image FROM categorie');
+
+        // Выполняем запрос
+        $listlcat->execute();
+
+        // Получаем результаты
+        $listcategories = $listlcat->fetchAll(PDO::FETCH_OBJ);
+
+        return $listcategories;
+
+    } catch (PDOException $e) {
+        // Логируем ошибку и возвращаем пустой массив
+        error_log('Ошибка SQL: ' . $e->getMessage());
+        return [];
+    }
+}
+
+function add_commandToBase() {
+    global $db;
+
+try {
+    $addcombase = $db->prepare('INSERT INTO resto.commande
+(id_plat, quantite, total, date_commande, etat, nom_client, telephone_client, email_client, adresse_client)
+VALUES(:id_plat, :quantite, :total, :date_commande, :etat, :nom_client, :telephone_client, :email_client, :adresse_client);');
+
+    
+$addcombase->execute([
+        ':id_plat' => $_SESSION['cart'][0]['id'],
+        ':quantite' => $_SESSION['cart'][0]['quantite'],
+        ':total' => $_SESSION['cart'][0]['price'] * $_SESSION['cart'][0]['quantity'], // Сохраняем новое имя файла
+        ':date_commande' => date('Ymd'),
+        ':etat' => 'Nouvelle',
+        ':nom_client' => $_POST['nom'].' '. $_POST['prenom'], 
+        ':telephone_client' => $_POST['telephone'],
+        ':email_client'=> $_POST['email'], 
+        ':adresse_client'=> $_POST['adresse'],
+        
+    ]);
+
+    header("Location: index.php");
+        exit();
+} catch (PDOException $e) {
+    die("Ошибка при добавлении в базу данных: " . $e->getMessage());
+}
+}
+
+function get_plat() {
+    global $db;
+    $requete = $db->prepare("SELECT libelle, image, id_categorie, description, id, prix, active FROM plat  WHERE id=?;");
+    $requete->execute(array($_GET["id"]));
+    $plat = $requete->fetch(PDO::FETCH_OBJ); 
+    return $plat; 
+}
+
 ?>
+
+
+
+
+
+

@@ -6,91 +6,51 @@ include 'DAO.php';
 ?>
 <body>
 
-<section>
-    <div class="container">
-        <?php 
+
+
+<section class="menu-section">
+  <div class="menu-container">
+    <!-- Карточка -->
+    <?php 
         $toutes = toutes_plats();
-        $i = 0; // Счетчик для контроля количества колонок
         foreach ($toutes as $plat):
-            // Если элемент первый или кратен 3, открываем строку
-            if ($i % 3 == 0) {
-                echo '<div class="row mb-4">';
-            }
-        ?>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="src/img/<?php echo $plat->image; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($plat->libelle); ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo htmlspecialchars($plat->libelle); ?></h5>
-                        <p class="card-text"><?php echo htmlspecialchars($plat->description); ?></p>
-                        <p><?php echo "$plat->prix €"; ?></p>
-                        <button class="btn btn-outline-success btn-add-to-cart">
-                            <i class="fa fa-shopping-cart"></i> Add to cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <?php 
-            $i++;
-            // Если элемент последний в строке (3 в строке), закрываем строку
-            if ($i % 3 == 0) {
-                echo '</div>'; 
-            }
             
-        endforeach; 
-
-        // Закрываем незавершённый ряд
-        if ($i % 3 != 0) {
-            echo '</div>';
-        }
-        ?>       
-    </div>
-</section>
-
-
-
+        ?>
+        
+        <form action="addcard.php" method="POST" class="custom-card">
+    <a href="plat.php?id=<?php echo $plat->id; ?>" class="custom-card-link">
+   
     
-     
+    <img src="src/img/<?php echo $plat->image; ?>" alt="<?php echo htmlspecialchars($plat->libelle); ?>" class="custom-card-img">
+      
+    <h5 class="custom-card-title"><?php echo htmlspecialchars($plat->libelle); ?> <i class="far fa-edit corrige"></i> </h5> 
+        <p class="custom-card-description"><?php echo htmlspecialchars($plat->description); ?></p>
+        <p class="custom-card-price"><?php echo "$plat->prix €"; ?></p>
+    </a>
+    <div class="custom-card-footer">
+        <!-- Поле для количества -->
+        <input type="number" name="quantite" min="1" value="1" class="custom-card-quantity" required>
+        <input type="hidden" name="image" value="<?php echo $plat->image; ?>">
+        <input type="hidden" name="libelle" value="<?php echo $plat->libelle; ?>">
+        <input type="hidden" name="id" value="<?php echo $plat->id; ?>">
+        <input type="hidden" name="prix" value="<?php echo $plat->prix; ?>">
 
-
-    <?php include 'footer.php'; ?>
-<!-- Модальное окно -->
-<div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addToCartModalLabel">Commander</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-4">
-                <!-- Здесь изображение блюда -->
-                <img src="/src/img/pp1.jpeg" class="img-fluid" alt="Crustaceans Lobsters">
-              </div>
-              <div class="col-md-8">
-                <!-- Здесь информация о блюде -->
-                <h5>Crustaceans Lobsters</h5>
-                <p>Цена: $51.00</p>
-                <p>Состав: 4 Chicken Legs • Chili Sauce • Soft Drinks</p>
-                <!-- Поле для выбора количества -->
-                <div class="input-group mb-3">
-                  <span class="input-group-text">Quantité</span>
-                  <input type="number" class="form-control" value="1" min="1">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Выбрать еще</button>
-          <button type="button" class="btn btn-success">Choisir encore</button>
-        </div>
-      </div>
+        <!-- Кнопка отправки формы -->
+        <button type="submit" class="custom-card-btn">
+            <i class="fa fa-shopping-cart"></i> Acheter
+        </button>
     </div>
+</form>
+
+   
+    <?php endforeach; ?>
+    <!-- Повторить карточки -->
   </div>
   
-
+</section>
+<div class="col-12 d-flex justify-content-center align-items-center my-2">
+  <button class="custom-card-btn" id="add"><a href="addplat.php">Ajouter plat</a></button>
+</div>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
