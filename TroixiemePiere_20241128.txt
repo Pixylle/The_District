@@ -1,6 +1,0 @@
-Nom: Troixieme
-Prénom: Piere
-Téléphone: 0782826209
-Email: drakoshiza@gmail.com
-Commande:
-Salade César     2
